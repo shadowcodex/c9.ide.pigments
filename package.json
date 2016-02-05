@@ -1,0 +1,21 @@
+{
+  "name": "pigments",
+  "description": "Adds color code highlighting",
+  "version": "1.0.0",
+  "author": "Shannon Duncan",
+  "contributors": [
+    {
+      "name": "Shannon Duncan",
+      "email": "shannon@unrestrictedcoding.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shadowcodex/c9.ide.pigments"
+  },
+  "plugins": {
+    "pigments": {}
+  },
+  "categories": ["miscellaneous"],
+  "licenses": ["MIT"]
+}
