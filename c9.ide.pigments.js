@@ -1,6 +1,6 @@
 define(function(require, exports, module) {
     main.consumes = ["Plugin", "commands", "tabManager", "ace", "ui"];
-    main.provides = ["pigments"];
+    main.provides = ["c9.ide.pigments"];
     return main;
 
     function main(options, imports, register) {
@@ -114,7 +114,7 @@ define(function(require, exports, module) {
         });
         
         register(null, {
-            "pigments": plugin
+            "c9.ide.pigments": plugin
         });
     }
 });

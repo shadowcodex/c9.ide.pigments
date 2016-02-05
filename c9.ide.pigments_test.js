@@ -2,13 +2,13 @@
 "use mocha";
 
 define(function(require, exports, module) {
-    main.consumes = ["plugin.test", "pigments"];
+    main.consumes = ["plugin.test", "c9.ide.pigments"];
     main.provides = [];
     return main;
 
     function main(options, imports, register) {
         var test = imports["plugin.test"];
-        var myplugin = imports.pigments;
+        var myplugin = imports.["c9.ide.pigments"];
         
         var describe = test.describe;
         var it = test.it;

@@ -18,7 +18,7 @@ This is a crude algorithm. It is slow. If you have a large file it may lock up y
 
 # Installation
 
-... TBD
+Use command `c9 install c9.ide.pigments`
 
 # Screen Shot
 
