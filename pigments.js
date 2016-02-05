@@ -38,6 +38,8 @@ define(function(require, exports, module) {
                 var cssString;
                 var marker;
                 
+                deletePigments(e);
+                
                 // get hex colors and highlight them
                 var ranges = ace.findAll(hex,{
                     regExp: true
@@ -85,13 +87,16 @@ define(function(require, exports, module) {
                 win: "Ctrl-Shift-Alt-C"
             },
             exec: function(e){
-                for (var i = 0; i < markerlist.length; i++) {
-                    e.ace.session.removeMarker(markerlist[i]);
-                }
+                deletePigments(e);
             }
         }, plugin)
         
-        
+        function deletePigments(e){
+            for (var i = 0; i < markerlist.length; i++) {
+                e.ace.session.removeMarker(markerlist[i]);
+            }
+            markerlist = [];
+        }
         
         /***** Lifecycle *****/
         
