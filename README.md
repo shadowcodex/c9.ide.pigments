@@ -18,3 +18,9 @@ This is a crude algorithm. It is slow. If you have a large file it may lock up y
 
 # Installation
 
+... TBD
+
+# Screen Shot
+
+![screen shot](https://raw.githubusercontent.com/shadowcodex/c9.ide.pigments/master/pigments.png)
+
