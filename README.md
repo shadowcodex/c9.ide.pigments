@@ -20,6 +20,10 @@ This is a crude algorithm. It is slow. If you have a large file it may lock up y
 
 Use command `c9 install c9.ide.pigments`
 
+In order to use custom plugins during alpha you need to change some settings in your c9 workspace.
+
+Go to `Cloud9>Preferences>Experimental>SDK` and enable the two toggles for `Load Plugins From Workspace` and `Load Custom Plugins`. That should do the trick!
+
 # Screen Shot
 
 ![screen shot](https://raw.githubusercontent.com/shadowcodex/c9.ide.pigments/master/pigments.png)
