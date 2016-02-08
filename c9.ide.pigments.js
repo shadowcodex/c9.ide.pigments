@@ -257,19 +257,6 @@ define(function(require, exports, module) {
                 })
                 
                 
-                ////////////////////////////////////////////////////////////////
-                ////////////////////// Blob option /////////////////////////////
-                ////////////////////////////////////////////////////////////////
-                // var blob = new Blob([reporthtml], {"type": "text/html"});
-                // var blobURL = URL.createObjectURL(blob);
-                // var options = {
-                //     editorType: "preview",
-                //     active: true,
-                //     title: "Pigments Report",
-                //     url: blobURL
-                // };
-                
-                // tabManager.open(options);
             }
         }, plugin);
         
@@ -303,31 +290,31 @@ define(function(require, exports, module) {
                 html += '<div class="palette2" style="background:' + temp[i].toHexString() + '"></div>';
             }
             
-            html += "<h4>Monochromatic</h4>"
+            html += "<h4>Monochromatic</h4>";
             temp = col.monochromatic();
             for (var i = 0; i < temp.length; i++){
                 html += '<div class="palette2" style="background:' + temp[i].toHexString() + '"></div>';
             }
             
-            html += "<h4>Split Complement</h4>"
+            html += "<h4>Split Complement</h4>";
             temp = col.splitcomplement();
             for (var i = 0; i < temp.length; i++){
                 html += '<div class="palette2" style="background:' + temp[i].toHexString() + '"></div>';
             }
             
-            html += "<h4>Triad</h4>"
+            html += "<h4>Triad</h4>";
             temp = col.triad();
             for (var i = 0; i < temp.length; i++){
                 html += '<div class="palette2" style="background:' + temp[i].toHexString() + '"></div>';
             }
             
-            html += "<h4>Tetrad</h4>"
+            html += "<h4>Tetrad</h4>";
             temp = col.tetrad();
             for (var i = 0; i < temp.length; i++){
                 html += '<div class="palette2" style="background:' + temp[i].toHexString() + '"></div>';
             }
             
-            html += "<h4>Complement</h4>"
+            html += "<h4>Complement</h4>";
             html += '<div class="palette2" style="background:' + col.complement().toHexString() + '"></div>';
             
             html += `</td>
