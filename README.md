@@ -12,6 +12,10 @@ Remove Pigments:
 MAC: `COMMAND-SHIFT-ALT-C`
 WIN: `COMMAND-SHIFT-ALT-C`
 
+Generate Report:
+MAC: `COMMAND-SHIFT-ALT-G`
+WIN: `COMMAND-SHIFT-ALT-G`
+
 # Important
 
 This is a crude algorithm. It is slow. If you have a large file it may lock up your editor for a bit.
@@ -26,5 +30,9 @@ Go to `Cloud9>Preferences>Experimental>SDK` and enable the two toggles for `Load
 
 # Screen Shot
 
-![screen shot](https://raw.githubusercontent.com/shadowcodex/c9.ide.pigments/master/pigments.png)
+Highlight: 
+![highlight screen shot](https://raw.githubusercontent.com/shadowcodex/c9.ide.pigments/master/pigments.png)
+
+Report:
+![report screen shot](https://raw.githubusercontent.com/shadowcodex/c9.ide.pigments/master/pigments-report.png)
 

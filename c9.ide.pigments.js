@@ -124,6 +124,7 @@ define(function(require, exports, module) {
                 border: 1px solid #111;
                 border-collapse: collapse;
                 padding: 15px;
+                vertical-align: top;
             }
             .palette {
                 border: 1px solid #fff;
@@ -245,15 +246,16 @@ define(function(require, exports, module) {
                 fs.writeFile(filepath, reporthtml, function(err){
                     if(err)return console.error(err);
                     console.log("File written");
+                    tabManager.open({
+                        path: filepath,
+                        editorType: "preview",
+                        focus: true,
+                        active: true
+                    }, function(err, tab){
+                        if(err)return console.error(err);
+                    })
                 })
-                tabManager.open({
-                    path: filepath,
-                    editorType: "preview",
-                    focus: true,
-                    active: true
-                }, function(err, tab){
-                    if(err)return console.error(err);
-                })
+                
                 
                 ////////////////////////////////////////////////////////////////
                 ////////////////////// Blob option /////////////////////////////
@@ -298,35 +300,35 @@ define(function(require, exports, module) {
             
             temp = col.analogous();                    
             for (var i = 0; i < temp.length; i++){
-                html += '<div class="palette2" style="background:' + temp[i] + '"></div>';
+                html += '<div class="palette2" style="background:' + temp[i].toHexString() + '"></div>';
             }
             
             html += "<h4>Monochromatic</h4>"
             temp = col.monochromatic();
             for (var i = 0; i < temp.length; i++){
-                html += '<div class="palette2" style="background:' + temp[i] + '"></div>';
+                html += '<div class="palette2" style="background:' + temp[i].toHexString() + '"></div>';
             }
             
-            html += "<h4p>Split Complement</h4>"
+            html += "<h4>Split Complement</h4>"
             temp = col.splitcomplement();
             for (var i = 0; i < temp.length; i++){
-                html += '<div class="palette2" style="background:' + temp[i] + '"></div>';
+                html += '<div class="palette2" style="background:' + temp[i].toHexString() + '"></div>';
             }
             
             html += "<h4>Triad</h4>"
             temp = col.triad();
             for (var i = 0; i < temp.length; i++){
-                html += '<div class="palette2" style="background:' + temp[i] + '"></div>';
+                html += '<div class="palette2" style="background:' + temp[i].toHexString() + '"></div>';
             }
             
             html += "<h4>Tetrad</h4>"
             temp = col.tetrad();
             for (var i = 0; i < temp.length; i++){
-                html += '<div class="palette2" style="background:' + temp[i] + '"></div>';
+                html += '<div class="palette2" style="background:' + temp[i].toHexString() + '"></div>';
             }
             
             html += "<h4>Complement</h4>"
-            html += '<div class="palette2" style="background:' + col.complement() + '"></div>';
+            html += '<div class="palette2" style="background:' + col.complement().toHexString() + '"></div>';
             
             html += `</td>
             </tr>
