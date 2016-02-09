@@ -106,73 +106,49 @@ define(function(require, exports, module) {
                 /////////////// Template Header  ///////////////////////////////
                 ////////////////////////////////////////////////////////////////
                 
-                var reporthtml = `<!DOCTYPE html>
-<html>
-    <head>
-        <title>Pigment Report for c9</title>
-        <style>
-            body {
-                font-family: Sans-serif;
-                background: #222;
-                color: #fff;
-            }
-            table {
-                width: 100%;
-                text-align:left;
-            }
-            table, th, td {
-                border: 1px solid #111;
-                border-collapse: collapse;
-                padding: 15px;
-                vertical-align: top;
-            }
-            .palette {
-                border: 1px solid #fff;
-                width: 50px;
-                height: 50px;
-            }
-            .palette2 {
-                border: 1px solid #fff;
-                width: 50px;
-                height: 50px;
-                margin-right: 5px;
-                display: inline-block;
-            }
-            .details {
-                color: #DACEA9;
-            }
-            .header {
-                margin-right:5px;
-            }
-        </style>
-    <head>
-    <body>
-        <h1>Pigment Report for cloud9</h1>
-        <p>The following information has been pulled from the file of xxx on cloud9 for use as a reference of all colors used in the referenced file.</p>
-        <p>A sample palatte looks like this:</p>
-        <table>
-            <tr>
-                <th>Palette</th>
-                <th>Color Codes</th>
-            </tr>
-            <tr>
-                <td><div class="palette" style="background:#123456"></div></td>
-                <td>
-                    <strong class="header">HEX: </strong> <span class="details">#123456</span> <br>
-                    <strong class="header">RGB: </strong> <span class="details">rgb(18, 52, 86)</span> <br>
-                    <strong class="header">RGBA: </strong> <span class="details">rgba(18, 52, 86, 1)</span> <br>
-                    <strong class="header">HSL: </strong> <span class="details">hsl(120, 79%, 76%)</span>
-                </td>
-            </tr>
-        </table>
-        <hr>
-        <p>Begin Pigment Report: </p>
-        <table>
-            <tr>
-                <th>Palette</th>
-                <th>Color Codes</th>
-            </tr>
-                `;
+                var reporthtml = [
+                    '<!DOCTYPE html>',
+                    '<html>',
+                    '<head>',
+                    '<title>Pigment Report for c9</title>',
+                    '<style>',
+                    'body {font-family: Sans-serif; background: #222;color: #fff;}',
+                    'table {width: 100%;text-align:left;}',
+                    'table, th, td {border: 1px solid #111;border-collapse: collapse;padding: 15px;vertical-align: top;}',
+                    '.palette {border: 1px solid #fff;width: 50px;height: 50px;}',
+                    '.palette2 {border: 1px solid #fff;width: 50px;height: 50px;margin-right: 5px;display: inline-block;}',
+                    '.details {color: #DACEA9;}',
+                    '.header {margin-right:5px;}',
+                    '</style>',
+                    '<head>',
+                    '<body>',
+                    '<h1>Pigment Report for cloud9</h1>',
+                    '<p>The following information has been pulled from cloud9 for use as a reference of all colors used in the referenced file.</p>',
+                    '<p>A sample palatte looks like this:</p>',
+                    '<table>',
+                    '<tr>',
+                    '<th>Palette</th>',
+                    '<th>Color Codes</th>',
+                    '</tr>',
+                    '<tr>',
+                    '<td><div class="palette" style="background:#123456"></div></td>',
+                    '<td>',
+                    '<strong class="header">HEX: </strong> <span class="details">#123456</span> <br>',
+                    '<strong class="header">RGB: </strong> <span class="details">rgb(18, 52, 86)</span> <br>',
+                    '<strong class="header">RGBA: </strong> <span class="details">rgba(18, 52, 86, 1)</span> <br>',
+                    '<strong class="header">HSL: </strong> <span class="details">hsl(120, 79%, 76%)</span>',
+                    '</td>',
+                    '</tr>',
+                    '</table>',
+                    '<hr>',
+                    '<p>Begin Pigment Report: </p>',
+                    '<table>',
+                    '<tr>',
+                    '<th>Palette</th>',
+                    '<th>Color Codes</th>',
+                    '</tr>'
+                ].join('\n');
+                
                 
                 
                 var color;
@@ -233,9 +209,12 @@ define(function(require, exports, module) {
                 /////////////// Template Footer  ///////////////////////////////
                 ////////////////////////////////////////////////////////////////
                 
-                reporthtml += `        </table>
-    </body>
-</html>`;
+                reporthtml += [
+                    '</table><br>',
+                    '<h5>Generated by Pigments for c9. Author: Shannon Duncan. Github: https://github.com/shadowcodex/c9.ide.pigments</h5>',
+                    '</body>',
+                    '</html>'
+                ].join('\n');
                 
                 ////////////////////////////////////////////////////////////////
                 ////////////////////// File option /////////////////////////////
@@ -270,56 +249,59 @@ define(function(require, exports, module) {
         function generate_template(color){
             var col = tinycolor(color);
             var temp;
-            var html = `<tr>
-                <td><div class="palette" style="background:` + col.toString() + `"></div></td>
-                <td>
-                    <strong class="header">Original Value: </strong> <span class="details">` + col.toString() + `</span> <br>
-                    <br>
-                    <strong class="header">HEX: </strong> <span class="details">` + col.toHexString() + `</span> <br>
-                    <strong class="header">RGB: </strong> <span class="details">` + col.toRgbString() + `</span> <br>
-                    <strong class="header">HSL: </strong> <span class="details">` + col.toHslString() + `</span> <br>
-                    <strong class="header">HSV: </strong> <span class="details">` + col.toHsvString() + `</span>
-                    <br>
-                    <br>
-                    <br>
-                    <h3>Color Combinations</h3>
-                    <h4>Analogous</h4>`;
+            var html = [
+                '<tr>',
+                '<td><div class="palette" style="background:' + col.toString() + '"></div></td>',
+                '<td>',
+                '<strong class="header">Original Value: </strong> <span class="details">' + col.toString() + '</span> <br>',
+                '<br>',
+                '<strong class="header">HEX: </strong> <span class="details">' + col.toHexString() + '</span> <br>',
+                '<strong class="header">RGB: </strong> <span class="details">' + col.toRgbString() + '</span> <br>',
+                '<strong class="header">HSL: </strong> <span class="details">' + col.toHslString() + '</span> <br>',
+                '<strong class="header">HSV: </strong> <span class="details">' + col.toHsvString() + '</span>',
+                '<br>',
+                '<br>',
+                '<br>',
+                '<h3>Color Combinations</h3>',
+                '<h4>Analogous</h4>'
+            ].join('\n');
             
             temp = col.analogous();                    
             for (var i = 0; i < temp.length; i++){
                 html += '<div class="palette2" style="background:' + temp[i].toHexString() + '"></div>';
             }
             
-            html += "<h4>Monochromatic</h4>";
+            html += "<h4>Monochromatic</h4>\n";
             temp = col.monochromatic();
             for (var i = 0; i < temp.length; i++){
                 html += '<div class="palette2" style="background:' + temp[i].toHexString() + '"></div>';
             }
             
-            html += "<h4>Split Complement</h4>";
+            html += "<h4>Split Complement</h4>\n";
             temp = col.splitcomplement();
             for (var i = 0; i < temp.length; i++){
                 html += '<div class="palette2" style="background:' + temp[i].toHexString() + '"></div>';
             }
             
-            html += "<h4>Triad</h4>";
+            html += "<h4>Triad</h4>\n";
             temp = col.triad();
             for (var i = 0; i < temp.length; i++){
                 html += '<div class="palette2" style="background:' + temp[i].toHexString() + '"></div>';
             }
             
-            html += "<h4>Tetrad</h4>";
+            html += "<h4>Tetrad</h4>\n";
             temp = col.tetrad();
             for (var i = 0; i < temp.length; i++){
                 html += '<div class="palette2" style="background:' + temp[i].toHexString() + '"></div>';
             }
             
-            html += "<h4>Complement</h4>";
+            html += "<h4>Complement</h4>\n";
             html += '<div class="palette2" style="background:' + col.complement().toHexString() + '"></div>';
             
-            html += `</td>
-            </tr>
-            `;
+            html += [
+                '</td>',
+                '</tr>'
+            ].join('\n');
             
             return html;
         }
