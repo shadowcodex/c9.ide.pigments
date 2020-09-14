@@ -1,3 +1,5 @@
+[![Discord](https://img.shields.io/discord/630805507782868992.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/GghbTQA)
+
 # Pigments for Cloud9
 
 This is a simple cloud9 plugin that highlights color codes in the current file. 
